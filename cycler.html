@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html> <head> <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style>
+<title>Cycler app</title>
+</head>
+
+
+
+<body>
+	<h1>Matthew McArthur builds a cycler</h1>
+
+		<div class="flex-container" id="target">
+		  <div class id="cycler">row item 1</div>   
+		  <div class id="cycler">row item 2</div>  
+		  <div class id="cycler">row item 3</div>  
+		</div>
+	
+	<p> Press the button to create an new element of type div and then add it to the container.</p>
+		
+		<label for="InputElement">Add a value: </label>
+		<input type="text" id="InputElement">
+		<button onclick="makeNewDiv()">Add value</button>
+	
+	
+</body>
+<script>
+
+	let inputVal = document.getElementById("InputElement");
+
+	function makeNewDiv(){
+		/* make the div and its text */
+		let element = document.createElement("div")
+
+		let info = inputVal.value;
+		element.innerHTML = info;
+		element.style.color = "orange"
+
+		element.className = "cycler";
+
+		/* add it to the container */
+		let container = document.getElementById('target')
+		container.appendChild(element)
+		
+	}
+</script>
+</html>	
