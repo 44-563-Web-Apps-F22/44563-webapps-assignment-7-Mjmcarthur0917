@@ -180,9 +180,7 @@
 		treasureRow = treasureLocation % 5;
 		treasureCol = Math.ceil(treasureLocation / 5);
 
-		console.log("Row target: " + treasureRow + ", Col target: " + treasureCol);
-
-		
+		//help button check
 		if(checkRow == treasureRow && checkCol > treasureCol)
 		{
 			helpElement.innerHTML = "Up";
